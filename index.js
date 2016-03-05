@@ -1,18 +1,14 @@
-import { combineReducers } from 'redux'
-import { SUBMIT_ACTION1 } from '../actions'
-
-
-const initialState = {
-  isFetching: true
+export const SUBMIT_ACTION2 ='SUBMIT_ACTION2'
+export const SUBMIT_ACTION1 ='SUBMIT_ACTION1'
+export function submitAction2(input1) {
+  return{
+    type: SUBMIT_ACTION2,
+    input1
+  }
 }
-export default function rooReducer(state=initialState, action){
-  console.log('hello')
-  switch(action.type){
-    case SUBMIT_ACTION1:
-    state= Object.assign({}, state, {input1: action.input})
-    console.log(action)
-    return state
-    default:
-    return state
+export function submitAction1(input){
+  return{
+    type:SUBMIT_ACTION1,
+    input
   }
 }
